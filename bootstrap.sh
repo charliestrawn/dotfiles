@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Installing dotfiles."
 
 set -e
@@ -12,10 +14,12 @@ if [ -d "$HOME/dotfiles.old" ]; then
     echo "Cowardly refusing to replace old backup"
     exit 1
 else
-    mkdir -p $HOME/dotfiles.old
+    mkdir -p "$HOME/dotfiles.old"
     for file in "${filesToLink[@]}"
     do
-        cp $HOME/.file $HOME/dotfiles.old/
+        if [[ -f "$HOME/.$file" ]]; then
+            cp "$HOME/.$file" "$HOME/dotfiles.old/"
+        fi
     done
 fi
 
@@ -25,7 +29,7 @@ echo "Linking files"
 for file in "${filesToLink[@]}"
 do
     echo "Linking $file"
-    ln -svf $PWD/$file $HOME/.$file
+    ln -svf "$PWD/$file" "$HOME/.$file"
 done
 
 ./setup-zsh.sh
