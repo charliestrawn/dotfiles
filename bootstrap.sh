@@ -7,13 +7,19 @@ set -e
 # Check if macOs Command Line Tools is installed.
 xcode-select -p 1>/dev/null || xcode-select --install
 
-filesToLink=("aliases" "functions" "zshrc" "p10k.zsh" "vimrc")
+filesToLink=(
+    "aliases" 
+    "functions" 
+    "zshrc" 
+    "p10k.zsh" 
+    "vimrc"
+)
 
-echo "Backing up old dotfiles"
 if [ -d "$HOME/dotfiles.old" ]; then
     echo "Cowardly refusing to replace old backup"
     exit 1
 else
+    echo "Backing up old dotfiles"
     mkdir -p "$HOME/dotfiles.old"
     for file in "${filesToLink[@]}"
     do
