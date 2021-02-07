@@ -10,7 +10,13 @@ brew "jq"
 brew "kubernetes-helm"
 brew "n"
 brew "nats-server"
-brew "neovim"
+
+# Order matters 
+# Neovim needs to install from HEAD on M1 Macs
+brew "luajit", args: ["HEAD"]
+brew "tree-sitter", args: ["HEAD"]
+brew "neovim", args: ["HEAD"]
+
 brew "node"
 brew "pipenv"
 brew "python"

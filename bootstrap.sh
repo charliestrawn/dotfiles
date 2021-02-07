@@ -29,8 +29,6 @@ else
     done
 fi
 
-exit 1
-
 echo "Linking files"
 for file in "${filesToLink[@]}"
 do
@@ -42,7 +40,7 @@ done
 ./setup-brew.sh
 ./setup-vim.sh
 
-/usr/local/opt/python/libexec/bin/pip install -Ur dev-machine-reqs.txt
+$(brew --prefix)/opt/python/libexec/bin/pip install -Ur dev-machine-reqs.txt
 
 
 echo "Done. You may need to source $HOME/.zshrc"
