@@ -28,7 +28,7 @@ VIRTUAL_ENV_DISABLE_PROMPT=1
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/charliestrawn/.oh-my-zsh"

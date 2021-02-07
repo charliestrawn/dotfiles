@@ -36,6 +36,10 @@ do
     ln -svf "$PWD/$file" "$HOME/.$file"
 done
 
+if [ ! -f "$HOME/.secrets" ]; then
+    touch "$HOME/.secrets"
+fi
+
 ./setup-zsh.sh
 ./setup-brew.sh
 ./setup-vim.sh
