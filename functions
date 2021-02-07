@@ -1,0 +1,17 @@
+
+function dgrepid {
+    docker container ls | grep "$1" | cut -d ' ' -f1
+}
+
+function hmb {
+    git add . && \
+        git commit --amend --no-edit && \
+        git push -f
+}
+
+function pr {
+    local branch="$(git rev-parse --abbrev-ref HEAD)"
+    local remote="$(git remote -v | grep origin -m 1 | sed -E 's;.*(git@github.com:|https://github.com/)(.*)/.*;\2;g')"
+    local repo="$(git remote -v | grep origin -m 1 | sed -E 's;.*(git@github.com:|https://github.com/).*/(.*)\.git.*;\2;g')"
+    open "https://github.com/${remote}/${repo}/compare/${branch}?expand=1"
+}

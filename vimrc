@@ -1,4 +1,3 @@
-
 set nocompatible
 
 if !isdirectory(expand('~/.vim/undo/', 1))
