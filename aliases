@@ -1,0 +1,7 @@
+alias ll="ls -la"
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias v="vim"
+alias vim="nvim"
+alias k="kubectl"

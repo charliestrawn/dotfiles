@@ -2,15 +2,22 @@ tap "AdoptOpenJDK/openjdk"
 tap "homebrew/cask-fonts"
 tap "romkatv/powerlevel10k"
 
+brew "gh"
 brew "git"
 brew "go"
 brew "htop"
-brew "kubernetes-cli"
+brew "jq"
 brew "kubernetes-helm"
 brew "n"
 brew "nats-server"
+
+# Order matters 
+# Neovim needs to install from HEAD on M1 Macs
+brew "luajit", args: ["HEAD"]
+brew "tree-sitter", args: ["HEAD"]
+brew "neovim", args: ["HEAD"]
+
 brew "node"
-brew "neovim"
 brew "pipenv"
 brew "python"
 brew "reattach-to-user-namespace"
@@ -27,7 +34,7 @@ cask "alfred"
 cask "caffeine"
 cask "discord"
 cask "docker"
-cask "font-meslolg-nerd-font"
+cask "font-meslo-lg-nerd-font"
 cask "google-chrome"
 cask "insomnia"
 cask "iterm2"
