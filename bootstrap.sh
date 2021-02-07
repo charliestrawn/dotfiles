@@ -44,6 +44,9 @@ fi
 ./setup-brew.sh
 ./setup-vim.sh
 
+echo "Attempting to set Terminal Font"
+osascript -e "tell application \"Terminal\" to set the font name of window 1 to \"MesloLGSDZ Nerd Font\""
+
 $(brew --prefix)/opt/python/libexec/bin/pip install -Ur dev-machine-reqs.txt
 
 
