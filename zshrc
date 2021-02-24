@@ -20,8 +20,8 @@ source ~/.secrets
 
 export EDITOR=vim
 export GOPATH=$HOME/go
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$(brew --prefix)/bin:/usr/bin:$HOME/bin:$GOPATH/bin:$PATH"
-export PATH="$HOME/local/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python/libexec/bin:$(brew --prefix)/bin:/usr/bin:$HOME/bin:$GOPATH/bin:$HOME/local/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export VIRTUALENVWRAPPER_SCRIPT=$(brew --prefix)/bin/virtualenvwrapper.sh
 source $(brew --prefix)/bin/virtualenvwrapper_lazy.sh
 VIRTUAL_ENV_DISABLE_PROMPT=1
